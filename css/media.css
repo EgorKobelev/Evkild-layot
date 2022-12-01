@@ -1,0 +1,451 @@
+@media (max-width: 1663px) {
+    .about-us__cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-us__card:not(:last-child){
+        margin-bottom: 32px;
+    }
+
+    .about-us__card:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .about-us__card {
+        width: 870px;
+    }
+}
+
+@media (max-width: 1321px) {
+
+    .header__nav {
+        display: none;
+    }
+
+    .header .burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 23px;
+    }
+
+    .header .burger__line {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: black;
+    }
+
+    .header .burger__line:nth-child(2) {
+        top: 10px;
+    }
+
+    header .burger__line:nth-child(3) {
+        top: 20px;
+    }
+
+    .offer__title {
+        font-size: 60px;
+        line-height: 73px;
+        margin-bottom: 16px
+    }
+
+    .offer__desc {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .work__desc {
+        margin-right: 50px
+    }
+
+    .footer__desc {
+        display: none;
+    }
+
+    .footer__form {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .footer-right {
+        max-width: 570px;
+    }
+
+    .footer__container {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .container {
+        margin: 0 50px
+    }
+
+    .header__container, .footer__container {
+        padding: 14px 50px;
+    }
+
+    .offer__container {
+        background-image: url(../img/offer/first-1024.png);
+        border-radius: 24px;
+        background-repeat: no-repeat;
+        padding: 160px 77px 30px 77px;   
+    }
+
+    .offer__title {
+        font-size: 50px;
+        line-height: 61px;
+        margin-bottom: 16px
+    }
+
+    .offer__desc {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .offer__text-container {
+        margin-bottom: 60px; 
+    }
+
+    .about-us__card {
+        width: 100%;
+    }
+
+    .work .article__image-container {
+        width: 100%;
+        max-height: 689px;
+    }
+
+    .work .article__buttons {
+        display: flex; 
+        justify-content: space-between; 
+    }
+
+    .questions__item {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .offer__slider{
+        margin-left: 1%;
+    }
+
+    .section-offset--second-type {
+        margin-bottom: 80px;
+    }
+
+    .section-offset--first-type {
+        margin-bottom:  35px;
+    }
+}
+
+@media (max-width: 768px)  {
+
+    .offer__container {
+        padding: 60px 40px 0 40px;
+    }
+
+    .work__article {
+        width: 100%;
+        flex-direction: column;
+        flex-flow: column-reverse;
+    }
+
+    .work .article__image-container {
+        width: 100%;
+        max-height: 284px;
+        margin-bottom: 38px;
+    }
+
+    .work__list {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+    
+    .work__item:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .work__desc {
+        margin-right: 0;
+    }
+
+    .about-us__card:not(:first-child) .about-us__article {
+        padding: 35px 0 35px 40px;
+    }  
+
+    .about-us__card:first-child .article__details {
+        padding: 35px;
+        justify-content: space-between;
+    }
+
+    .about-us__card:first-child .details__text {
+        margin-right: 0;
+        max-width: 366px;
+    }
+
+    .work .article__buttons {
+        display: block;  
+    }
+
+    .footer .contacts__list {
+        display: none;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        flex-flow: column-reverse;
+        align-items: flex-start;
+    }
+
+    .footer__form,  .footer__contacts {
+        margin-right: 0;
+    }
+
+    .footer__form {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 685px) {
+
+    
+
+    .offer__button {
+        margin-bottom: 55px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .offer__title {
+        font-size: 40px;
+        line-height: 51px;
+    }
+
+    .offer__desc {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    
+    .about-us__card:first-child .article__details {
+        flex-direction: column;
+        max-width: 580px;
+    } 
+
+    .about-us__article:first-child .details__text {
+        margin-bottom: 16px;
+    }
+
+    .about-us__card:not(:first-child) .about-us__article {
+        flex-direction: column;
+        border: none;
+        align-items: center;
+        padding: 0;
+        max-height: 600px;
+    }
+
+    .about-us__card:not(:first-child) .article__text {
+        margin-bottom: 32px;
+
+    }
+
+    .about-us__article .article__image {
+        width: 140px;
+        margin-right: 0;
+        margin-bottom: 12px;
+    }
+
+    .work .article__image-container {
+        width: 100%;
+        max-height: 220px;
+        margin-bottom: 38px;
+    }
+
+    .footer .form__buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .footer .form__button {
+        margin-bottom: 100px;
+    }
+
+    .footer .form__label {
+        display: block;
+    }
+}
+
+@media (max-width: 460px) {
+
+    .section-offset--first-type {
+        margin-bottom: 60px;
+    }
+
+    .section-offset--second-type {
+        margin-bottom: 60px;
+    }
+
+    .title--h2 {
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .title--h3 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    
+    .button {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .container {
+        margin: 0 15px;
+    }
+
+    .offer {
+        max-height: 308px;
+    }
+
+    .offer__container {
+        max-width: 247px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 21px 15px 21px;
+        margin-left: max(15px, calc((100% - 250px - 30px)/2));
+        background-image: url(../img/offer/first-320.png);
+    }
+
+    .offer__title {
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .offer__desc {
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .offer__button {
+        padding: 13px 28px;
+        font-size: 12px;
+        line-height: 15px;
+        margin-bottom: 35px;
+        width: 162px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .offer .slider__button--point {
+        width: 10px;
+    }
+
+    .offer__text-container {
+        margin-bottom: 32px;
+    }
+
+    .about-us__desc {
+        font-size: 14px;
+        line-height: 28px;
+    }
+
+    .about-us .article__text {
+        font-size: 14px;
+        line-height: 28px;
+    }
+
+    .about-us__card:not(:first-child) .article__text {
+        margin-bottom: 0;
+    }
+
+    .about-us .article__image {
+        width: 64px;
+    }
+
+    .work .article__image-container {
+        max-height: 150px;
+    }
+
+    .work__item {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .work .article__button:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    .work .article__button--second {
+        padding: 12px 32px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .about-us__card:not(:first-child) .about-us__article {
+        align-items: flex-start;
+    }
+
+    .questions__item {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .questions .item__button--img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .footer .form__input {
+        font-size: 14px;
+        line-height: 32px;
+    }
+
+    .footer .form__textarea {
+        font-size: 14px;
+        line-height: 32px;
+    }
+
+    .footer .form__checkbox--text {
+        font-size: 16px;
+        line-height: 32px;
+    }
+
+    .footer__container {
+        align-items: center;
+    }
+
+    .footer__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-us__cards .about-us__card:first-child {
+        display: none;
+    }
+
+    .about-us__card--320px {
+        display: block;
+    }
+
+    .about-us__card--320px .details__button {
+        color: #FF9900;
+    }
+
+    .about-us__card--320px .article__image {
+        width: 100%;
+    }
+
+}
