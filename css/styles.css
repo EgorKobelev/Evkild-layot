@@ -72,6 +72,10 @@ body {
     background-color: #E5E5E5;
 }
 
+.stop-scroll {
+    overflow: hidden;
+}
+
 .list-reset {
     list-style: none;
     margin: 0;
@@ -161,7 +165,36 @@ h3 {
     display: none;
 }
 
+.header .burger-close {
+    display: none;
+    position: relative;
+    width: 40px;
+    margin-bottom: 100px;
+}
+
+.header .burger-close__line {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 3px;
+}
+
+.header .burger-close__line:first-child {
+    top: 50%;
+    left: 25%;
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+
+.header .burger-close__line:nth-child(2) {
+    top: 50%;
+    left: 25%;
+    transform: rotate(-45deg);
+    transform-origin: center;
+}
+
 .header__container {
+    position: relative;
     width: 100%;
     padding: 14px max(64px, calc((100% - 1770px) / 2 - 22px)); 
     display: flex;
@@ -177,6 +210,11 @@ h3 {
     justify-content: space-between;
 }
 
+.header__nav {
+    display: flex;
+    align-items: center;
+}
+
 .header__nav .nav__list {
     display: flex;
     margin-right: 238px;
@@ -184,7 +222,6 @@ h3 {
     font-size: 18px;
     line-height: 22px;
 }
-
 
 .header__nav .nav__item {
     margin-right: 85px;
@@ -249,36 +286,82 @@ h3 {
     stroke: var(--medium-orange);
 }
 
+.header__search {
+    position: absolute;
+    width: 50%;
+    min-width: 320px;
+    z-index: 2000;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12);
+    right: 0;
+    top: 20%;
+    padding: 18px 13px;
+    border-radius: 24px;
+    display: flex;
+    visibility: hidden;
+    transform: translateY(-120%);
+    transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.header__search--active {
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.header__input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    outline: 0;
+    border-bottom: var(--light-gray) 1px solid;
+}
+
+.header__search--element:not(:last-child) {
+    margin-right: 16px;
+}
+
 /* offer */
 
-.offer__container {
+.swiper {
     max-width: 100%;
-    min-height: 620px;
+    min-height: 100%;
+}
+
+.offer__slide--first {
     background-image: url(../img/offer/first.png);
+}
+
+.offer__slide--second {
+    background-image: url(../img/offer/second.png);
+}
+
+.offer__slide--third {
+    background-image: url(../img/offer/third.png); 
+}
+
+
+.offer .swiper-slide {
     border-radius: 24px;
     padding: 100px 0px 30px 80px;
 }
+
+.offer .swiper-pagination-bullet-active {
+    background-color: white;
+}
+
+.offer .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+} 
+
+.offer .swiper .swiper-pagination-bullet:not(:last-child) {
+    margin-right: 15px;
+} 
 
 .offer__text-container {
     color: white;
     max-width: 837px;
     margin-bottom: 90px;
-}
-
-.offer__slider {
-    display: flex;
-    margin-left: -80px;
-}
-
-.offer__slider .slider__button:first-child {
-    margin-left: auto;
-}
-
-.offer__slider .slider__button:last-child {
-    margin-right: auto;
-}
-.offer__slider .slider__button:not(:last-child) {
-    margin-right: 20px;
 }
 
 .offer__title {
@@ -423,6 +506,10 @@ h3 {
 }
 
 .work__article {
+    display: none;
+}
+
+.work__article--active{
     display: flex;
 }
 
@@ -460,6 +547,10 @@ h3 {
 
 .work__article .article__text {
     max-width: 758px;
+}
+
+.article__text--main {
+    margin-bottom: 18px;
 }
 
 .work__article .article__text--second {
@@ -502,7 +593,15 @@ h3 {
 
 .work__article .article__image-container {
     width: 870px;
-    height: 460px;
+    max-height: 460px;
+}
+
+.work__item--active {
+    color: var(--dark-orange)
+}
+
+.work__button {
+    color: inherit;
 }
 
 /* questions */
@@ -512,16 +611,41 @@ h3 {
 }
 
 .questions__item {
-    display: flex;
-    align-items: center;
     padding: 27px 0;
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
-    justify-content: space-between;
     cursor: pointer;
-    transition: fill 0.3s ease-in-out, color 0.3s ease-in-out;
     position: relative;
+    background-color: #e5e5e5;
+}
+
+.questions__item .ac-trigger::after {
+    display: none;
+}
+
+.questions__item .ac-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: 'montserrat', sans-serif;
+    padding: 0;
+    
+}
+
+.questions .ac {
+    list-style: none;
+    border: none;
+    margin: 0;
+}
+
+.questions__item .ac-panel {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
 }
 
 .questions__item::before {
@@ -547,12 +671,18 @@ h3 {
 }
 
 .questions__item .item__button--img {
-    fill: var(--light-gray)
+    fill: var(--light-gray);
+    transition: transform 0.3s ease-in-out;
 }
 
+.questions .item__button--img {
+    min-width: 50px;
+    min-height: 50px;
+} 
 
-.questions__item:focus .item__button--img {
-    fill: var(--medium-orange);
+.questions .is-active .item__button--img {
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-in-out;
 }
 
 .questions__item:hover .item__button--img {
@@ -563,45 +693,45 @@ h3 {
     fill: var(--medium-orange);
 }
 
-.questions__item:focus::before{
+.questions__item:focus::before  {
     background-color: var(--medium-orange);
     z-index: 1;
 }
 
-.questions__item:focus::after{
+.questions__item:focus::after {
     background-color: var(--medium-orange);
     z-index: 1;
 }
 
-.questions__item:hover::before{
+.questions__item:hover::before {
     background-color: var(--medium-orange);
     z-index: 1;
 }
 
-.questions__item:hover::after{
+.questions__item:hover::after {
     background-color: var(--medium-orange);
     z-index: 1;
 }
 
-.questions__item:active::before{
+.questions__item:active::before {
     background-color: var(--medium-orange);
     z-index: 1;
 }
 
-.questions__item:active::after{
+.questions__item:active::after {
     background-color: var(--medium-orange);
     z-index: 1;
 }
 
-.questions__item:focus {
+.questions__item:focus .ac-trigger {
     color: var(--medium-orange);
 }
 
-.questions__item:hover {
+.questions__item:hover .ac-trigger {
     color: var(--medium-orange);
 }
 
-.questions__item:active {
+.questions__item:active .ac-trigger {
     color: var(--medium-orange);
 }
 

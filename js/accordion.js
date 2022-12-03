@@ -1,0 +1,1 @@
+new Accordion('.questions__list')
