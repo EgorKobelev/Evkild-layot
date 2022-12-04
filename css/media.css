@@ -445,8 +445,15 @@
         line-height: 17px;
     }
 
+    .work__article .article__buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .work .article__button:not(:last-child) {
-        margin-right: 10px;
+        margin-bottom: 16px;
+        margin-right: 0;
     }
 
     .work .article__button--second {
@@ -454,6 +461,7 @@
         font-size: 12px;
         line-height: 15px;
     }
+
 
     .about-us__card:not(:first-child) .about-us__article {
         align-items: flex-start;
